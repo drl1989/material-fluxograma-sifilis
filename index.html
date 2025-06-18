@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluxograma de Atendimento de Enfermagem na Sífilis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .shape {
+            padding: 20px;
+            margin: 0 auto;
+            text-align: center;
+            border: 2px solid #333;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            max-width: 600px;
+        }
+        .oval {
+            border-radius: 50%;
+            background-color: #e6f7ff;
+            border-color: #91d5ff;
+            width: 300px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .rectangle {
+            border-radius: 8px;
+            background-color: #fafafa;
+            border-color: #d9d9d9;
+        }
+        .rectangle strong {
+            color: #d4380d;
+        }
+        .diamond {
+            width: 250px;
+            height: 250px;
+            background-color: #fffbe6;
+            border-color: #ffe58f;
+            transform: rotate(45deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+        .diamond-text {
+            transform: rotate(-45deg);
+            max-width: 200px;
+            font-weight: bold;
+        }
+        .arrow {
+            text-align: center;
+            font-size: 2.5em;
+            color: #595959;
+            margin: 5px 0;
+        }
+        .decision-path {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+        .path {
+            width: 48%;
+            border: 1px dashed #bfbfbf;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .path h3 {
+            text-align: center;
+            margin-top: 0;
+            padding: 8px;
+            border-radius: 5px;
+        }
+        .path-sim h3 {
+            background-color: #d9f7be;
+            color: #389e0d;
+        }
+        .path-nao h3 {
+            background-color: #fff1f0;
+            color: #cf1322;
+        }
+        .notes {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #e6f7ff;
+            border-left: 5px solid #1890ff;
+            border-radius: 5px;
+        }
+        .notes h3 {
+            margin-top: 0;
+            color: #0056b3;
+        }
+        ul {
+            text-align: left;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fluxograma de Atendimento de Enfermagem na Sífilis Adquirida</h1>
+        <p style="text-align:center; font-style:italic;">Baseado no PCDT-IST 2022 do Ministério da Saúde</p>
+
+        <div class="shape oval">
+            <p><strong>INÍCIO:</strong><br>Acolhimento da Pessoa na UBS</p>
+        </div>
+
+        <div class="arrow">↓</div>
+
+        <div class="shape rectangle">
+            <p><strong>TESTAGEM INICIAL</strong><br>Realizar Teste Rápido (TR) para Sífilis. Oferecer testagem para HIV e Hepatites B/C.</p>
+        </div>
+
+        <div class="arrow">↓</div>
+
+        <div class="shape diamond">
+            <div class="diamond-text">Resultado do TR para Sífilis é REAGENTE?</div>
+        </div>
+
+        <div class="decision-path">
+            <div class="path path-nao">
+                <h3>NÃO</h3>
+                <p><strong>1. Avaliar Risco:</strong> Existe suspeita clínica forte (ex: úlcera) ou parceria com sífilis nos últimos 3 meses?</p>
+                <p><strong>Se NÃO:</strong> Resultado negativo. Realizar aconselhamento em Prevenção Combinada. Agendar rastreamento futuro.</p>
+                <p><strong>Se SIM:</strong> Suspeita de janela imunológica. Tratar como sífilis recente e solicitar novo teste em 30 dias. Tratar parceria(s).</p>
+                <p style="text-align:center; font-weight:bold;">→ FIM DO FLUXO</p>
+            </div>
+            <div class="path path-sim">
+                <h3>SIM</h3>
+                <p><strong>1. Comunicar</strong> resultado de forma acolhedora.</p>
+                <p><strong>2. Iniciar Tratamento Imediato</strong> com Penicilina G Benzatina na mesma consulta.</p>
+                <p><strong>3. Coletar VDRL/RPR</strong> para titulação inicial e monitoramento.</p>
+                <p style="text-align:center; font-weight:bold;">→ CONTINUA ABAIXO</p>
+            </div>
+        </div>
+        
+        <div class="arrow">↓ (Continuação do "SIM")</div>
+
+        <div class="shape rectangle">
+            <p><strong>ESTADIAMENTO CLÍNICO E TRATAMENTO</strong><br>Realizar anamnese e exame físico para classificar:</p>
+            <ul>
+                <li><strong>Sífilis Recente (<1 ano):</strong> Penicilina G Benzatina 2,4 milhões UI, IM, Dose Única.</li>
+                <li><strong>Sífilis Tardia (>1 ano ou duração ignorada):</strong> Penicilina G Benzatina 2,4 milhões UI, IM, 1x/semana por 3 semanas.</li>
+            </ul>
+        </div>
+        
+        <div class="arrow">↓</div>
+
+        <div class="shape rectangle">
+            <p><strong>CONDUTAS COMPLEMENTARES</strong></p>
+            <ul>
+                <li><strong>Notificação:</strong> Preencher a ficha do SINAN para Sífilis Adquirida.</li>
+                <li><strong>Parcerias Sexuais:</strong> Orientar, convocar e tratar a(s) parceria(s).</li>
+                <li><strong>Aconselhamento:</strong> Orientar sobre a doença, prevenção, adesão e a Reação de Jarisch-Herxheimer.</li>
+                <li><strong>Agendamento:</strong> Marcar retorno para monitoramento.</li>
+            </ul>
+        </div>
+
+        <div class="arrow">↓</div>
+
+        <div class="shape rectangle">
+            <p><strong>MONITORAMENTO PÓS-TRATAMENTO</strong><br>Realizar VDRL/RPR em 3, 6 e 12 meses (Mensal para gestantes).</p>
+        </div>
+
+        <div class="arrow">↓</div>
+
+        <div class="shape diamond">
+            <div class="diamond-text">Houve resposta adequada ao tratamento? (Queda de 2 diluições no título)</div>
+        </div>
+
+        <div class="decision-path">
+            <div class="path path-nao">
+                <h3>NÃO</h3>
+                <p><strong>FALHA / REINFECÇÃO</strong><br>Ausência de resposta ou aumento do título. Investigar reexposição, retratar paciente e parceria(s). Avaliar sinais neurológicos e considerar encaminhamento.</p>
+            </div>
+            <div class="path path-sim">
+                <h3>SIM</h3>
+                <p><strong>CURA CLÍNICA</strong><br>Manter seguimento até 12 meses. Se resposta mantida, dar alta do seguimento. Reforçar prevenção contínua.</p>
+                <p style="text-align:center; font-weight:bold;">→ FIM DO FLUXO</p>
+            </div>
+        </div>
+
+        <div class="notes">
+            <h3>Observações Importantes para o Enfermeiro(a)</h3>
+            <ul>
+                <li><strong>Gestantes:</strong> O tratamento é sempre com Penicilina. Em caso de alergia, devem ser encaminhadas para dessensibilização em ambiente hospitalar. O monitoramento é MENSAL.</li>
+                <li><strong>Segurança:</strong> A administração de Penicilina G Benzatina é uma prática segura na Atenção Primária. A equipe de enfermagem é respaldada pela Decisão COFEN nº 0094/2015 para realizar o procedimento.</li>
+                <li><strong>Alternativas:</strong> Para pacientes não gestantes e com alergia comprovada à penicilina, a alternativa é Doxiciclina 100mg (15 dias para sífilis recente; 30 dias para tardia).</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>
